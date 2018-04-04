@@ -1,0 +1,9 @@
+WHAT_TO_IGNORE
+
+bin/
+
+doc/
+
+*.log
+
+*.pdf
