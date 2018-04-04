@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="grid-pane" stylesheets="@Player.css">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="vbox" GridPane.columnIndex="2">
+               <children>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../res/icona_utente.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="NomeUtente">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="3" />
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="vbox">
+               <children>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../res/recenti.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Recenti">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="vbox" GridPane.rowIndex="1">
+               <children>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../res/playlist.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlist">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Button mnemonicParsing="false" text="Aggiungi" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="vbox" GridPane.rowIndex="2">
+               <children>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../res/ricerca.png" />
+                     </image>
+                  </ImageView>
+                  <TextField promptText="Carca...">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="vbox" GridPane.rowIndex="3" />
+            <SplitPane dividerPositions="0.4" style="-fx-background-color: #37373C;" GridPane.columnIndex="1">
+               <items>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../res/songplaying.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Canzone" />
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantante" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../res/coda.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../res/shuffle.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../res/previous.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../res/play.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../res/skip.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../res/shuffle.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Slider />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <Slider>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Slider>
+                     </children>
+                  </VBox>
+               </items>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </GridPane.margin>
+            </SplitPane>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="vbox" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="3">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="I tuoi Amici" textAlignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="334.67437744140625" minWidth="10.0" prefWidth="52.6370735168457" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="641.3513946533203" minWidth="10.0" prefWidth="630.3629264831543" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="334.67437744140625" minWidth="10.0" prefWidth="52.6370735168457" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="394.6584167480469" minHeight="10.0" prefHeight="125.79680633544922" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="544.9379305839539" minHeight="10.0" prefHeight="225.47119140625" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="388.4969482421875" minHeight="10.0" prefHeight="115.808349609375" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="209.1641845703125" minHeight="10.0" prefHeight="150.191650390625" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </children>
+</VBox>

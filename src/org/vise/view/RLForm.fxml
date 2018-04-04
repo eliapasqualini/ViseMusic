@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="vbox" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.vise.controller.ViseController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../res/logo.png" />
+         </image>
+      </ImageView>
+      <TextField disable="true" editable="false" maxWidth="300.0" promptText="Username">
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+      </TextField>
+      <TextField maxWidth="300.0" promptText="Email">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </TextField>
+      <TextField maxWidth="300.0" promptText="Password">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </TextField>
+      <Button mnemonicParsing="false" text="Login" textFill="WHITE">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+         </padding>
+      </Button>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Non hai un Account? Registrati." textAlignment="CENTER">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Text>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilizza Offline." textAlignment="CENTER">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Text>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Vise Music. Realizzato da Hnatyshyn Nazar, Navacchia Mattia, Pasqualini Elia, Pazzaglia Marco." textAlignment="CENTER">
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+      </Text>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

@@ -1,0 +1,12 @@
+.vbox {
+	-fx-background-color: #2A2A2A;
+}
+
+.button {
+	-fx-background-color: #07807D;
+}
+
+.text-field:focused{
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: #CC2E4F; /* here rgba (corrected) */
+}

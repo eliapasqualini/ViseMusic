@@ -1,0 +1,52 @@
+.grid-pane {
+	-fx-background-color: #37373C;
+}
+
+.vbox {
+	-fx-background-color: #2A2A2A;
+}
+
+.vbox-commands {
+	-fx-border-style: solid none none none;
+	-fx-border-width: 1;
+	-fx-border-color: #ffffff;
+}
+
+.button {
+	-fx-background-color: #2A2A2A;
+	-fx-border-width: 1;
+	-fx-border-color: #ffffff;
+	-fx-background-radius: 5;
+	-fx-border-radius: 5;
+}
+
+.list-view {
+	-fx-background-color: transparent;
+	-fx-color: #ffffff;
+}
+
+.text-area .content {
+	-fx-background-color: #2A2A2A;
+	-fx-color: #ffffff;
+}
+
+.split-pane:horizontal > .split-pane-divider {
+   -fx-background-color: transparent;
+}
+
+.split-pane:vertical > .split-pane-divider {
+   -fx-background-color: transparent;
+}
+
+.split-pane {
+	-fx-border-width: 0 0 1 0; 
+	-fx-border-color: transparent transparent #fff transparent;
+}
+
+.slider {
+	-fx-opacity: 0.7;
+}
+
+.slider:hover {
+	-fx-opacity: 1;
+}
