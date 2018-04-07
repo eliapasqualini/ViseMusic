@@ -34,7 +34,7 @@ public class PlayerScreenController {
     public void newPlaylist() {
         final TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Nuova playlist");
-        dialog.setHeaderText("Inserire il nome della nuova palylist");
+        dialog.setHeaderText("Inserire il nome della nuova playlist");
         final Optional<String> result = dialog.showAndWait();
         if (result.isPresent()) {
             System.out.println("NEW PLAYLIST: " + result.get());

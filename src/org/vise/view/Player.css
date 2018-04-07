@@ -20,6 +20,10 @@
 	-fx-border-radius: 5;
 }
 
+.button:hover {
+	-fx-background-color: #bdc3c7;
+}
+
 .list-view {
 	-fx-background-color: transparent;
 	-fx-color: #ffffff;
