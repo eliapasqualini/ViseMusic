@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.net.*?>
 <?import javafx.scene.input.*?>
 <?import javafx.scene.paint.*?>
@@ -15,11 +16,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="vbox" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.vise.controller.ViseController">
+<VBox fx:id="rlformPane" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="vbox" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.vise.view.RLFormScreenController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../res/logo.png" />
+            <Image url="@../../../../res/icons/logo.png" />
          </image>
       </ImageView>
       <TextField disable="true" editable="false" maxWidth="300.0" promptText="Username">
@@ -44,16 +45,25 @@
          <padding>
             <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
          </padding>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Non hai un Account? Registrati." textAlignment="CENTER">
          <VBox.margin>
             <Insets top="10.0" />
          </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Text>
-      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilizza Offline." textAlignment="CENTER">
+      <Text fx:id="txtUtilizzaOffline" fill="WHITE" onMouseClicked="#utilizzaOffline" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilizza Offline." textAlignment="CENTER">
          <VBox.margin>
             <Insets top="10.0" />
          </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Text>
       <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Vise Music. Realizzato da Hnatyshyn Nazar, Navacchia Mattia, Pasqualini Elia, Pazzaglia Marco." textAlignment="CENTER">
          <VBox.margin>
