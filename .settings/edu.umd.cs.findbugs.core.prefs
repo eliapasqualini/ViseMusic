@@ -1,5 +1,9 @@
 #SpotBugs User Preferences
+<<<<<<< HEAD
+#Fri Apr 06 11:48:57 CEST 2018
+=======
 #Fri Apr 06 11:45:40 CEST 2018
+>>>>>>> a7215791d88edc3ee9e17f2872d15cd63486322a
 detectorAppendingToAnObjectOutputStream=AppendingToAnObjectOutputStream|true
 detectorAtomicityProblem=AtomicityProblem|true
 detectorBadAppletConstructor=BadAppletConstructor|false
