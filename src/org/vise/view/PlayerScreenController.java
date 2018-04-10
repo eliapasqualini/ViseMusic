@@ -10,10 +10,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextInputDialog;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.StageStyle;
 
 /***
  * 
