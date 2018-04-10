@@ -1,38 +1,37 @@
 package org.vise.controller;
 
-import java.io.IOException;
-import org.vise.view.Screens;
-import javafx.application.Application;
+import org.vise.view.FXLauncher;
+
+import com.sun.javafx.application.PlatformImpl;
+
+import javafx.application.Platform;
 import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
-import javafx.fxml.FXMLLoader;
 
 /***
  * 
  * @author mattianavach
  *
  */
-public class Main extends Application {
-    private static final int WIDTH_START = 900;
-    private static final int HEIGHT_START = 600;
-    /**
-     * @throws IOException *
-     * 
-     */
-    @Override
-    public void start(final Stage primaryStage) throws IOException {
+public class Main {
 
-        final VBox root = (VBox) FXMLLoader.load(getClass().getResource(Screens.PLAYER.getResourcePath()));
-        final Scene scene = new Scene(root, Main.WIDTH_START, Main.HEIGHT_START);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
     /***
      * 
      * @param args command line arguments
      */
     public static void main(final String[] args) {
-        launch(args);
+        PlatformImpl.startup(() -> {
+        });
+        final FXLauncher launcher = new FXLauncher();
+
+        Platform.runLater(() -> {
+            try {
+                final Stage primaryStage = new Stage();
+                primaryStage.setTitle("Vise Music");
+                launcher.start(primaryStage);
+            } catch (Exception e) {
+                System.out.println("Unable to load graphic.");
+                e.printStackTrace();
+            }
+        });
     }
 }

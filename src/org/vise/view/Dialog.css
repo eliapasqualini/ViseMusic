@@ -1,0 +1,16 @@
+.Dialog{
+    -fx-background-color: #37373C;
+}
+.Dialog > *.button-bar > *.container{
+    -fx-background-color: #37373C;
+}
+.Dialog > *.label.content{
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+.Dialog:header *.header-panel{
+    -fx-background-color: #37373C;
+}
+.Dialog:header *.header-panel *.label{
+    -fx-text-fill: #FFFFFF;
+}

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.net.*?>
 <?import javafx.scene.input.*?>
 <?import javafx.scene.paint.*?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.vise.view.PlayerScreenController">
    <children>
       <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="grid-pane" stylesheets="@Player.css">
          <children>
@@ -23,7 +24,7 @@
                <children>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../res/icona_utente.png" />
+                        <Image url="@../../../../res/icons/icona_utente.png" />
                      </image>
                   </ImageView>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="NomeUtente">
@@ -38,7 +39,7 @@
                <children>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../res/recenti.png" />
+                        <Image url="@../../../../res/icons/recenti.png" />
                      </image>
                   </ImageView>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Recenti">
@@ -52,7 +53,7 @@
                <children>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../res/playlist.png" />
+                        <Image url="@../../../../res/icons/playlist.png" />
                      </image>
                   </ImageView>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Playlist">
@@ -60,10 +61,13 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Text>
-                  <Button mnemonicParsing="false" text="Aggiungi" textFill="WHITE">
+                  <Button fx:id="btnNewPlaylist" mnemonicParsing="false" onMouseClicked="#newPlaylist" text="Aggiungi" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
             </VBox>
@@ -71,7 +75,7 @@
                <children>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../res/ricerca.png" />
+                        <Image url="@../../../../res/icons/ricerca.png" />
                      </image>
                   </ImageView>
                   <TextField promptText="Cerca">
@@ -97,7 +101,7 @@
                      <children>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../res/songplaying.png" />
+                              <Image url="@../../../../res/icons/songplaying.png" />
                            </image>
                         </ImageView>
                         <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
@@ -117,51 +121,69 @@
                            <children>
                               <ImageView pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../res/coda.png" />
+                                    <Image url="@../../../../res/icons/coda.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets right="20.0" />
                                  </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </ImageView>
                               <ImageView pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../res/shuffle.png" />
+                                    <Image url="@../../../../res/icons/shuffle.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets right="20.0" />
                                  </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </ImageView>
-                              <ImageView pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="btnPrev" onMouseClicked="#prev" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../res/previous.png" />
+                                    <Image url="@../../../../res/icons/previous.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets right="20.0" />
                                  </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </ImageView>
-                              <ImageView pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="btnPlay" onMouseClicked="#play" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../res/play.png" />
+                                    <Image url="@../../../../res/icons/play.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets right="20.0" />
                                  </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </ImageView>
-                              <ImageView pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="btnNext" onMouseClicked="#next" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../res/skip.png" />
+                                    <Image url="@../../../../res/icons/skip.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets right="20.0" />
                                  </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </ImageView>
-                              <ImageView pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="btnReplay" onMouseClicked="#replay" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../res/shuffle.png" />
+                                    <Image url="@../../../../res/icons/replay.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets right="20.0" />
                                  </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </ImageView>
                               <Slider />
                            </children>

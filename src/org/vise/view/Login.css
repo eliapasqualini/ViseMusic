@@ -6,6 +6,10 @@
 	-fx-background-color: #07807D;
 }
 
+.button:hover {
+	-fx-background-color: #066b69;
+}
+
 .text-field:focused{
     -fx-faint-focus-color: transparent;
     -fx-focus-color: #CC2E4F; /* here rgba (corrected) */
