@@ -1,4 +1,4 @@
-package org.vise.model;
+package org.vise.model.playlist;
 
 import java.io.BufferedInputStream;
 import java.io.File;
