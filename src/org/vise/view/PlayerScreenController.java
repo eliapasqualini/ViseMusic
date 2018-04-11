@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Optional;
 
+import org.vise.controller.PlayerControllerImpl;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
@@ -21,12 +23,20 @@ import javafx.scene.image.ImageView;
 public class PlayerScreenController {
 
     private static final int DIMENSION_ICONS = 18;
+    private PlayerControllerImpl player;
 
     @FXML
     private ImageView btnPlay, btnPrev, btnNext, btnReplay;
 
     @FXML
     private Button btnNewPlaylist;
+
+    /**
+     * 
+     */
+    public PlayerScreenController() {
+        this.player = new PlayerControllerImpl();
+    }
 
     /**
      * 
@@ -53,8 +63,6 @@ public class PlayerScreenController {
      */
     @FXML
     public void play() {
-        System.out.println("PLAY");
-
         InputStream is;
         try {
             is = new BufferedInputStream(new FileInputStream(System.getProperty("user.dir") + System.getProperty("file.separator") + "res" + System.getProperty("file.separator") + "icons" + System.getProperty("file.separator") + "stop.png"));
@@ -62,6 +70,8 @@ public class PlayerScreenController {
         } catch (FileNotFoundException exc) {
             exc.printStackTrace();
         }
+
+        this.player.play();
     }
 
     /**
@@ -85,6 +95,6 @@ public class PlayerScreenController {
      */
     @FXML
     public void replay() {
-        System.out.println("REPLAY");
+        this.player.replay();
     }
 }
