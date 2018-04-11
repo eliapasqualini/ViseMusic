@@ -18,8 +18,7 @@ public  class PlaylistImpl implements Playlist {
 
     private final UUID playlistID;
     private String name;
-    private Map<UUID, List<Song>> map = new HashMap<>();
-
+    private final  Map<UUID, List<Song>> map = new HashMap<>();
 
     /**
      * 
@@ -27,11 +26,9 @@ public  class PlaylistImpl implements Playlist {
      *          The name of Playlist
      */
     public PlaylistImpl(final String name) {
-
         this.playlistID = UUID.randomUUID();
         this.name = name;
         this.map.put(this.playlistID, new ArrayList<>());
-
     }
 
     /**
@@ -50,7 +47,7 @@ public  class PlaylistImpl implements Playlist {
         if (!checkSong(song)) {
             throw new IllegalArgumentException("Song not found");
         }
-            this.map.get(this.playlistID).remove(song);
+        this.map.get(this.playlistID).remove(song);
     }
 
     /**
@@ -114,7 +111,7 @@ public  class PlaylistImpl implements Playlist {
 
     private boolean checkSong(final Song song) {
         if (this.map.get(this.playlistID).contains(song)) {
-                return true;
+            return true;
         }
         return false;
     }
