@@ -8,9 +8,9 @@ import org.vise.model.playlist.SongImpl;
  * @author eliapasqualini
  *
  */
-public class PlayerControllerImpl {
+public class PlayerControllerImpl implements PlayerController {
 
-    private PlayerImpl player;
+    private final PlayerImpl player;
 
     /**
      * 
@@ -22,6 +22,7 @@ public class PlayerControllerImpl {
     /**
      * Play song.
      */
+    @Override
     public void play() {
         this.player.play();
     }
@@ -29,6 +30,7 @@ public class PlayerControllerImpl {
     /**
      * 
      */
+    @Override
     public void replay() {
         this.player.replay();
     }
@@ -38,8 +40,8 @@ public class PlayerControllerImpl {
      * @param path
      *          The path of the song to be played.
      */
+    @Override
     public void loadSong(final String path) {
         this.player.loadSong(new SongImpl(path));
     }
-
 }
