@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import org.vise.model.Song;
-
 
 /**
  * 
@@ -110,10 +108,7 @@ public  class PlaylistImpl implements Playlist {
     }
 
     private boolean checkSong(final Song song) {
-        if (this.map.get(this.playlistID).contains(song)) {
-            return true;
-        }
-        return false;
+        return this.map.get(this.playlistID).contains(song);
     }
 
 }

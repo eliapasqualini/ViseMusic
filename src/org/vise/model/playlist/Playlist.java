@@ -3,8 +3,6 @@ package org.vise.model.playlist;
 import java.util.List;
 import java.util.UUID;
 
-import org.vise.model.Song;
-
 /**
  * 
  * @author eliapasqualini

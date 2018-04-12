@@ -1,5 +1,7 @@
 package org.vise.model;
 
+import org.vise.model.playlist.Song;
+
 /**
  * 
  * @author mattianavach
@@ -7,4 +9,32 @@ package org.vise.model;
  */
 public interface Player {
 
+    /**
+     * 
+     * @param song
+     *          The song to be loaded;
+     */
+    void loadSong(Song song);
+
+    /**
+     * 
+     */
+    void play();
+
+    /**
+     * 
+     */
+    void pause();
+
+    /**
+     * 
+     */
+    void replay();
+
+    /**
+     * 
+     * @return
+     *          It the player is playing a song.
+     */
+    boolean isPlayingSong();
 }
