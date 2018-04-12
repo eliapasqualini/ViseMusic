@@ -1,6 +1,7 @@
 package org.vise.view;
 
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -14,6 +15,8 @@ import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 
 /***
  * 
@@ -30,6 +33,9 @@ public class PlayerScreenController {
 
     @FXML
     private Button btnNewPlaylist;
+
+    @FXML
+    private VBox btnCaricaCanzone;
 
     /**
      * 
@@ -55,6 +61,22 @@ public class PlayerScreenController {
         if (result.isPresent()) {
             System.out.println("NEW PLAYLIST: " + result.get());
             //this.controller.newPlaylist(result.get());
+        }
+    }
+
+    /**
+     * 
+     */
+    @FXML
+    public void caricaCanzone() {
+        final FileChooser chooser = new FileChooser();
+        chooser.setTitle("Seleziona la Canzone da eseguire.");
+        final File file = chooser.showOpenDialog(null);
+        if (file != null) {
+            final String fileAsString = file.toString();
+            this.player.loadSong(fileAsString);
+        } else {
+            System.out.println("No choises");
         }
     }
 
