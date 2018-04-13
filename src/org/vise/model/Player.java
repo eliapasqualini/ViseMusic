@@ -37,4 +37,11 @@ public interface Player {
      *          It the player is playing a song.
      */
     boolean isPlayingSong();
+    
+    /**
+     * 
+     * @param amount
+     *          The value of the volume.
+     */
+    void setVolume(float amount);
 }

@@ -16,6 +16,8 @@ public class PlayerImpl implements Player {
     private AudioPlayer player;
     private Minim minim;
     private boolean isPlaying;
+    private static final float MAXGAIN = 5.0f;
+    private static final float MINGAIN = -60.0f;
 
     /**
      * Constructor for the class PlayerImpl.
@@ -101,5 +103,22 @@ public class PlayerImpl implements Player {
      */
     private void setIsPlaying(final boolean state) {
         this.isPlaying = state;
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public void setVolume(final float amount) {
+        this.player.setGain(this.player.getGain() + amount);
+        if (this.player.getGain() <= MINGAIN) {
+            this.player.setGain(MINGAIN);
+            this.player.mute();
+        } else {
+            this.player.unmute();
+        }
+        if (this.player.getGain() >= MAXGAIN) {
+            this.player.setGain(MAXGAIN);
+        }
     }
 }
