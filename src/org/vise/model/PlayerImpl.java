@@ -78,6 +78,47 @@ public class PlayerImpl implements Player {
         return this.isPlaying;
     }
 
+
+    /**
+     * 
+     */
+    @Override
+    public void setVolume(final float amount) {
+        this.player.setGain(this.player.getGain() + amount);
+        if (this.player.getGain() <= MINGAIN) {
+            this.player.setGain(MINGAIN);
+            this.player.mute();
+        } else {
+            this.player.unmute();
+        }
+        if (this.player.getGain() >= MAXGAIN) {
+            this.player.setGain(MAXGAIN);
+        }
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public int getPosition() {
+        // ritorna la percentuale della posizione attuale
+        return (this.player.length() / 100) * this.player.position();
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public void setPoistion(final int pos) {
+        //controllo che il valore in ingresso sia una percentuale valida
+        if (pos > 100 || pos < 0) {
+            throw new IllegalArgumentException();
+        }
+        //calcola dalla percentuale i millisecondi da cui far eseguire la canzone
+        final int newPosition = (this.player.length() / 100) * pos;
+        this.player.play(newPosition);
+    }
+
     /**
      * 
      */
@@ -105,20 +146,4 @@ public class PlayerImpl implements Player {
         this.isPlaying = state;
     }
 
-    /**
-     * 
-     */
-    @Override
-    public void setVolume(final float amount) {
-        this.player.setGain(this.player.getGain() + amount);
-        if (this.player.getGain() <= MINGAIN) {
-            this.player.setGain(MINGAIN);
-            this.player.mute();
-        } else {
-            this.player.unmute();
-        }
-        if (this.player.getGain() >= MAXGAIN) {
-            this.player.setGain(MAXGAIN);
-        }
-    }
 }

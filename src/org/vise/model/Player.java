@@ -37,7 +37,21 @@ public interface Player {
      *          It the player is playing a song.
      */
     boolean isPlayingSong();
-    
+
+    /**
+     * 
+     * @return
+     *          The position in percentage of the current song.
+     */
+    int getPosition();
+
+    /**
+     * 
+     * @param pos
+     *          The position in percentage of the current song.
+     */
+    void setPoistion(int pos);
+
     /**
      * 
      * @param amount
