@@ -11,7 +11,7 @@ public class SongImpl implements Song {
 
     private final UUID songID;
     private final String audioPath;
-    private final Metadata meta;
+    private final transient Metadata meta;
 
     /**
      * Create Song object.

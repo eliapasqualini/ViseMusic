@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-
 /**
  * 
  * @author eliapasqualini
@@ -14,6 +13,9 @@ import java.util.UUID;
  */
 public  class PlaylistImpl implements Playlist {
 
+    /**
+     * 
+     */
     private final UUID playlistID;
     private String name;
     private String author;
@@ -80,7 +82,6 @@ public  class PlaylistImpl implements Playlist {
         return this.playlistID;
     }
 
-
     /**
      * 
      */
@@ -88,7 +89,6 @@ public  class PlaylistImpl implements Playlist {
     public String getName() {
         return this.name;
     }
-
     /**
      * 
      */
@@ -97,7 +97,6 @@ public  class PlaylistImpl implements Playlist {
         return this.author;
     }
 
-
     /**
      * 
      */
@@ -105,7 +104,6 @@ public  class PlaylistImpl implements Playlist {
     public List<Song> getPlaylistContent() {
         return this.map.get(this.playlistID);
     }
-
 
     /**
      * 

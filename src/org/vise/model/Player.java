@@ -53,7 +53,7 @@ public interface Player {
      * @param pos
      *          The position in percentage of the current song.
      */
-    void setPoistion(int pos);
+    void setPosition(int pos);
 
     /**
      * 
@@ -68,6 +68,13 @@ public interface Player {
      *          The length of the current song.
      */
     int getSongLength();
+
+    /**
+     * 
+     * @param namePlaylist
+     *          The name of the playlist to be added.
+     */
+    void addPlaylist(String namePlaylist);
 
     /**
      * 

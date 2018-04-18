@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.vise.model.playlist.FileSystemHandler;
 import org.vise.model.playlist.Playlist;
+import org.vise.model.playlist.PlaylistImpl;
 import org.vise.model.playlist.Song;
 
 import ddf.minim.AudioPlayer;
@@ -79,7 +80,6 @@ public class PlayerImpl implements Player {
         return this.player.isPlaying();
     }
 
-
     /**
      * 
      */
@@ -109,7 +109,7 @@ public class PlayerImpl implements Player {
      * 
      */
     @Override
-    public void setPoistion(final int pos) {
+    public void setPosition(final int pos) {
         if (pos < 0 || pos > this.getSongLength()) {
             throw new IllegalArgumentException();
         }
@@ -129,8 +129,8 @@ public class PlayerImpl implements Player {
      * 
      */
     @Override
-    public List<Playlist> getAllPlaylist() {
-        return this.playlists;
+    public void addPlaylist(final String namePlaylist) {
+        this.playlists.add(new PlaylistImpl(namePlaylist));
     }
 
     /**
@@ -149,6 +149,14 @@ public class PlayerImpl implements Player {
      */
     private boolean playerEmpty() {
         return this.player == null;
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public List<Playlist> getAllPlaylist() {
+        return this.playlists;
     }
 
     private void setGain(final float amount) {
