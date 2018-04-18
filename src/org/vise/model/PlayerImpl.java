@@ -1,6 +1,10 @@
 package org.vise.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.vise.model.playlist.FileSystemHandler;
+import org.vise.model.playlist.Playlist;
 import org.vise.model.playlist.Song;
 
 import ddf.minim.AudioPlayer;
@@ -15,16 +19,16 @@ public class PlayerImpl implements Player {
 
     private AudioPlayer player;
     private Minim minim;
-    private boolean isPlaying;
     private static final float MAXGAIN = 5.0f;
     private static final float MINGAIN = -60.0f;
+    private List<Playlist> playlists;
 
     /**
      * Constructor for the class PlayerImpl.
      */
     public PlayerImpl() {
         this.minim = new Minim(new FileSystemHandler());
-        this.isPlaying = false;
+        this.playlists = new ArrayList<>();
     }
 
     /**
@@ -44,7 +48,6 @@ public class PlayerImpl implements Player {
     public void play() {
         this.checkPlayerLoaded();
         this.player.play();
-        this.setIsPlaying(true);
     }
 
     /**
@@ -54,7 +57,6 @@ public class PlayerImpl implements Player {
     public void pause() {
         this.checkPlayerLoaded();
         this.player.pause();
-        this.setIsPlaying(false);
     }
 
     /**
@@ -65,7 +67,6 @@ public class PlayerImpl implements Player {
         this.checkPlayerLoaded();
         this.player.pause();
         this.player.rewind();
-        this.setIsPlaying(false);
     }
 
     /**
@@ -75,7 +76,7 @@ public class PlayerImpl implements Player {
      */
     @Override
     public boolean isPlayingSong() {
-        return this.isPlaying;
+        return this.player.isPlaying();
     }
 
 
@@ -84,15 +85,15 @@ public class PlayerImpl implements Player {
      */
     @Override
     public void setVolume(final float amount) {
-        this.player.setGain(this.player.getGain() + amount);
+        this.setGain(amount);
         if (this.player.getGain() <= MINGAIN) {
-            this.player.setGain(MINGAIN);
+            this.setGain(MINGAIN);
             this.player.mute();
         } else {
             this.player.unmute();
         }
         if (this.player.getGain() >= MAXGAIN) {
-            this.player.setGain(MAXGAIN);
+            this.setGain(MAXGAIN);
         }
     }
 
@@ -101,8 +102,7 @@ public class PlayerImpl implements Player {
      */
     @Override
     public int getPosition() {
-        // ritorna la percentuale della posizione attuale
-        return (this.player.length() / 100) * this.player.position();
+        return this.player.position();
     }
 
     /**
@@ -110,13 +110,27 @@ public class PlayerImpl implements Player {
      */
     @Override
     public void setPoistion(final int pos) {
-        //controllo che il valore in ingresso sia una percentuale valida
-        if (pos > 100 || pos < 0) {
+        if (pos < 0 || pos > this.getSongLength()) {
             throw new IllegalArgumentException();
         }
-        //calcola dalla percentuale i millisecondi da cui far eseguire la canzone
-        final int newPosition = (this.player.length() / 100) * pos;
+        final int newPosition = pos;
         this.player.play(newPosition);
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public int getSongLength() {
+        return this.player.length();
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public List<Playlist> getAllPlaylist() {
+        return this.playlists;
     }
 
     /**
@@ -137,13 +151,8 @@ public class PlayerImpl implements Player {
         return this.player == null;
     }
 
-    /**
-     * 
-     * @param state
-     *          State to be attached to isPlaying field.
-     */
-    private void setIsPlaying(final boolean state) {
-        this.isPlaying = state;
+    private void setGain(final float amount) {
+        this.player.setGain(amount);
     }
 
 }

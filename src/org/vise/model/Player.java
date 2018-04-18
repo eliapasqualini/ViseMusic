@@ -1,5 +1,8 @@
 package org.vise.model;
 
+import java.util.List;
+
+import org.vise.model.playlist.Playlist;
 import org.vise.model.playlist.Song;
 
 /**
@@ -58,4 +61,18 @@ public interface Player {
      *          The value of the volume.
      */
     void setVolume(float amount);
+
+    /**
+     * 
+     * @return
+     *          The length of the current song.
+     */
+    int getSongLength();
+
+    /**
+     * 
+     * @return
+     *          The list of all the playlist.
+     */
+    List<Playlist> getAllPlaylist();
 }
