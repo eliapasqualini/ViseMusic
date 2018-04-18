@@ -1,5 +1,8 @@
 package org.vise.model;
 
+import java.util.List;
+
+import org.vise.model.playlist.Playlist;
 import org.vise.model.playlist.Song;
 
 /**
@@ -47,10 +50,10 @@ public interface Player {
 
     /**
      * 
-     * @param pos
+     * @param position
      *          The position in percentage of the current song.
      */
-    void setPoistion(int pos);
+    void setPosition(int position);
 
     /**
      * 
@@ -58,4 +61,25 @@ public interface Player {
      *          The value of the volume.
      */
     void setVolume(float amount);
+
+    /**
+     * 
+     * @return
+     *          The lenght of the song.
+     */
+    int getSongLength();
+
+    /**
+     * 
+     * @param namePlaylist
+     *          The name of the playlist to be added.
+     */
+    void addPlaylist(String namePlaylist);
+
+    /**
+     * 
+     * @return
+     *          The list of the playlist attached at the current player.
+     */
+    List<Playlist> getAllPlaylist();
 }

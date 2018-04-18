@@ -1,6 +1,10 @@
 package org.vise.controller;
 
+import java.util.List;
+
+import org.vise.model.Player;
 import org.vise.model.PlayerImpl;
+import org.vise.model.playlist.Playlist;
 import org.vise.model.playlist.SongImpl;
 
 /**
@@ -10,7 +14,7 @@ import org.vise.model.playlist.SongImpl;
  */
 public class PlayerControllerImpl implements PlayerController {
 
-    private final PlayerImpl player;
+    private final Player player;
 
     /**
      * 
@@ -37,11 +41,57 @@ public class PlayerControllerImpl implements PlayerController {
 
     /**
      * 
-     * @param path
-     *          The path of the song to be played.
      */
     @Override
     public void loadSong(final String path) {
         this.player.loadSong(new SongImpl(path));
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public void changeVolume(final float amount) {
+        this.player.setVolume(amount);
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public void changePosition(final float position) {
+        this.player.setPosition((int) position);
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public int getPosition() {
+        return this.player.getPosition();
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public int getMaxLengthSong() {
+        return this.player.getSongLenght();
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public void addPlaylist(final String namePlaylist) {
+        this.player.addPlaylist(namePlaylist);
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public List<Playlist> getAllPlaylist() {
+        return this.player.getAllPlaylist();
     }
 }

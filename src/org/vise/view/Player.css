@@ -26,7 +26,22 @@
 
 .list-view {
 	-fx-background-color: transparent;
-	-fx-color: #ffffff;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+}
+
+.list-cell:hover {
+    -fx-background-color: red;
+}
+
+.list-view .scroll-bar:horizontal .increment-arrow,
+.list-view .scroll-bar:horizontal .decrement-arrow,
+.list-view .scroll-bar:horizontal .increment-button,
+.list-view .scroll-bar:horizontal .decrement-button {
+    -fx-padding:0;
 }
 
 .text-area .content {
@@ -42,7 +57,7 @@
    -fx-background-color: transparent;
 }
 
-.split-pane {
+.split-pane-player {
 	-fx-border-width: 0 0 1 0; 
 	-fx-border-color: transparent transparent #fff transparent;
 }
@@ -53,4 +68,8 @@
 
 .slider:hover {
 	-fx-opacity: 1;
+}
+
+.table-view{
+   -fx-background-color: transparent;
 }

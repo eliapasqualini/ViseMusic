@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-
 /**
  * 
  * @author eliapasqualini
@@ -14,6 +13,9 @@ import java.util.UUID;
  */
 public  class PlaylistImpl implements Playlist {
 
+    /**
+     * 
+     */
     private final UUID playlistID;
     private String name;
     private final  Map<UUID, List<Song>> map = new HashMap<>();
@@ -21,7 +23,7 @@ public  class PlaylistImpl implements Playlist {
     /**
      * 
      * @param name
-     *          The name of Playlist
+     *          The name of Playlist.
      */
     public PlaylistImpl(final String name) {
         this.playlistID = UUID.randomUUID();
@@ -64,7 +66,6 @@ public  class PlaylistImpl implements Playlist {
         return this.playlistID;
     }
 
-
     /**
      * 
      */
@@ -73,7 +74,6 @@ public  class PlaylistImpl implements Playlist {
         return this.name;
     }
 
-
     /**
      * 
      */
@@ -81,7 +81,6 @@ public  class PlaylistImpl implements Playlist {
     public List<Song> getPlaylistContent() {
         return this.map.get(this.playlistID);
     }
-
 
     /**
      * 
