@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="lib/OkHttp/okhttp-3.10.0.jar"/>
 	<classpathentry kind="lib" path="lib/OkHttp/okio-1.14.0.jar"/>
 	<classpathentry kind="lib" path="lib/mp3agic/mp3agic-0.9.1.jar"/>
+	<classpathentry kind="lib" path="lib/java-json/java-json.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
