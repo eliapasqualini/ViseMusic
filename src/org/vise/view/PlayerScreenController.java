@@ -1,10 +1,13 @@
 package org.vise.view;
 
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Optional;
+
+import org.vise.controller.PlayerControllerImpl;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,6 +15,11 @@ import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+<<<<<<< HEAD
+=======
+import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+>>>>>>> 9e38616c07d3c656e618f96ac6b2424686d9b110
 
 /***
  * 
@@ -21,12 +29,23 @@ import javafx.scene.image.ImageView;
 public class PlayerScreenController {
 
     private static final int DIMENSION_ICONS = 18;
+    private PlayerControllerImpl player;
 
     @FXML
     private ImageView btnPlay, btnPrev, btnNext, btnReplay;
 
     @FXML
     private Button btnNewPlaylist;
+
+    @FXML
+    private VBox btnCaricaCanzone;
+
+    /**
+     * 
+     */
+    public PlayerScreenController() {
+        this.player = new PlayerControllerImpl();
+    }
 
     /**
      * 
@@ -48,13 +67,27 @@ public class PlayerScreenController {
         }
     }
 
+    /**
+     * 
+     */
+    @FXML
+    public void caricaCanzone() {
+        final FileChooser chooser = new FileChooser();
+        chooser.setTitle("Seleziona la Canzone da eseguire.");
+        final File file = chooser.showOpenDialog(null);
+        if (file != null) {
+            final String fileAsString = file.toString();
+            this.player.loadSong(fileAsString);
+        } else {
+            System.out.println("No choises");
+        }
+    }
+
     /***
      * 
      */
     @FXML
     public void play() {
-        System.out.println("PLAY");
-
         InputStream is;
         try {
             is = new BufferedInputStream(new FileInputStream(System.getProperty("user.dir") + System.getProperty("file.separator") + "res" + System.getProperty("file.separator") + "icons" + System.getProperty("file.separator") + "stop.png"));
@@ -62,6 +95,8 @@ public class PlayerScreenController {
         } catch (FileNotFoundException exc) {
             exc.printStackTrace();
         }
+
+        this.player.play();
     }
 
     /**
@@ -85,6 +120,6 @@ public class PlayerScreenController {
      */
     @FXML
     public void replay() {
-        System.out.println("REPLAY");
+        this.player.replay();
     }
 }
