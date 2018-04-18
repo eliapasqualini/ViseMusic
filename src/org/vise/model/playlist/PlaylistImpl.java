@@ -24,11 +24,7 @@ public  class PlaylistImpl implements Playlist {
     /**
      * 
      * @param name
-<<<<<<< HEAD
-     *          The name of Playlist.
-=======
      *          The name of the playlist.
->>>>>>> 053576397b9d4f32659f2f1f5fa17f394278112b
      */
     public PlaylistImpl(final String name) {
         this.playlistID = UUID.randomUUID();
@@ -93,9 +89,6 @@ public  class PlaylistImpl implements Playlist {
     public String getName() {
         return this.name;
     }
-
-<<<<<<< HEAD
-=======
     /**
      * 
      */
@@ -104,8 +97,6 @@ public  class PlaylistImpl implements Playlist {
         return this.author;
     }
 
-
->>>>>>> 053576397b9d4f32659f2f1f5fa17f394278112b
     /**
      * 
      */
