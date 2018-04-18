@@ -65,12 +65,17 @@ public interface Player {
     /**
      * 
      * @return
+<<<<<<< HEAD
      *          The lenght of the song.
+=======
+     *          The length of the current song.
+>>>>>>> 053576397b9d4f32659f2f1f5fa17f394278112b
      */
     int getSongLength();
 
     /**
      * 
+<<<<<<< HEAD
      * @param namePlaylist
      *          The name of the playlist to be added.
      */
@@ -80,6 +85,10 @@ public interface Player {
      * 
      * @return
      *          The list of the playlist attached at the current player.
+=======
+     * @return
+     *          The list of all the playlist.
+>>>>>>> 053576397b9d4f32659f2f1f5fa17f394278112b
      */
     List<Playlist> getAllPlaylist();
 }

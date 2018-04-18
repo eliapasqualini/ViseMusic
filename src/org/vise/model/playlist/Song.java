@@ -29,4 +29,32 @@ public interface Song {
      *          The ID of the current song.
      */
     UUID getUUID();
+
+    /**
+     * 
+     * @return
+     *          The title of the current song.
+     */
+    String getTitle();
+
+    /**
+     * 
+     * @return
+     *          The artist of the current song.
+     */
+    String getArtist();
+
+    /**
+     * 
+     * @return
+     *          The album of the current song.
+     */
+    String getAlbum();
+
+    /**
+     * 
+     * @return
+     *          The duration of the current song.
+     */
+    long getDuration();
 }

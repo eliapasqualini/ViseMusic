@@ -48,6 +48,38 @@ public class SongImpl implements Song {
         return this.songID;
     }
 
+    /**
+     * 
+     */
+    @Override
+    public String getTitle() {
+        return this.meta.getTitle();
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public String getArtist() {
+        return this.meta.getArtist();
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public String getAlbum() {
+        return this.meta.getAlbum();
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public long getDuration() {
+        return this.meta.getDuration();
+    }
+
     /* Refresh metadata */
 
 }

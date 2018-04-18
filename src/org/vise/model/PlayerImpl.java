@@ -5,7 +5,10 @@ import java.util.List;
 
 import org.vise.model.playlist.FileSystemHandler;
 import org.vise.model.playlist.Playlist;
+<<<<<<< HEAD
 import org.vise.model.playlist.PlaylistImpl;
+=======
+>>>>>>> 053576397b9d4f32659f2f1f5fa17f394278112b
 import org.vise.model.playlist.Song;
 
 import ddf.minim.AudioPlayer;
@@ -118,11 +121,19 @@ public class PlayerImpl implements Player {
      * 
      */
     @Override
+<<<<<<< HEAD
     public void setPosition(final int position) {
         if (position < 0 || position > this.getSongLength()) {
             throw new IllegalArgumentException();
         }
         final int newPosition = position;
+=======
+    public void setPoistion(final int pos) {
+        if (pos < 0 || pos > this.getSongLength()) {
+            throw new IllegalArgumentException();
+        }
+        final int newPosition = pos;
+>>>>>>> 053576397b9d4f32659f2f1f5fa17f394278112b
         this.player.play(newPosition);
     }
 
@@ -138,8 +149,13 @@ public class PlayerImpl implements Player {
      * 
      */
     @Override
+<<<<<<< HEAD
     public void addPlaylist(final String namePlaylist) {
         this.playlists.add(new PlaylistImpl(namePlaylist));
+=======
+    public List<Playlist> getAllPlaylist() {
+        return this.playlists;
+>>>>>>> 053576397b9d4f32659f2f1f5fa17f394278112b
     }
 
     /**
@@ -160,12 +176,17 @@ public class PlayerImpl implements Player {
         return this.player == null;
     }
 
+<<<<<<< HEAD
     /**
      * 
      */
     @Override
     public List<Playlist> getAllPlaylist() {
         return this.playlists;
+=======
+    private void setGain(final float amount) {
+        this.player.setGain(amount);
+>>>>>>> 053576397b9d4f32659f2f1f5fa17f394278112b
     }
 
 }

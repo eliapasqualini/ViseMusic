@@ -18,17 +18,37 @@ public  class PlaylistImpl implements Playlist {
      */
     private final UUID playlistID;
     private String name;
+    private String author;
     private final  Map<UUID, List<Song>> map = new HashMap<>();
 
     /**
      * 
      * @param name
+<<<<<<< HEAD
      *          The name of Playlist.
+=======
+     *          The name of the playlist.
+>>>>>>> 053576397b9d4f32659f2f1f5fa17f394278112b
      */
     public PlaylistImpl(final String name) {
         this.playlistID = UUID.randomUUID();
         this.name = name;
         this.map.put(this.playlistID, new ArrayList<>());
+        this.author = "Tu";
+    }
+
+    /**
+     * 
+     * @param name
+     *          The name of the playlist.
+     * @param author
+     *          The name of the author.
+     */
+    public PlaylistImpl(final String name, final String author) {
+        this.playlistID = UUID.randomUUID();
+        this.name = name;
+        this.map.put(this.playlistID, new ArrayList<>());
+        this.author = author;
     }
 
     /**
@@ -74,6 +94,18 @@ public  class PlaylistImpl implements Playlist {
         return this.name;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * 
+     */
+    @Override
+    public String getAuthor() {
+        return this.author;
+    }
+
+
+>>>>>>> 053576397b9d4f32659f2f1f5fa17f394278112b
     /**
      * 
      */
