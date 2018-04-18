@@ -15,11 +15,8 @@ import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-<<<<<<< HEAD
-=======
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
->>>>>>> 9e38616c07d3c656e618f96ac6b2424686d9b110
 
 /***
  * 
