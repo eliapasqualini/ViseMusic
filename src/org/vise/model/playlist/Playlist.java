@@ -50,6 +50,13 @@ public interface Playlist {
     /**
      * 
      * @return
+     *          The name of the author.
+     */
+    String getAuthor();
+
+    /**
+     * 
+     * @return
      *          The list of the song in the current playlist.
      */
     List<Song> getPlaylistContent();
